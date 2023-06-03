@@ -1,7 +1,48 @@
-const { gql } from '@apollo/client';
+import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
-    # This is the mutation name that we defined in the typeDefs.js file
-    
+    login(email: $email, password:$password) {
+      token
+      user {
+        _id
+        username
+        email
+      }
+    }
   }
+`;
+
+export const ADD_USER = gql`
+  mutation addUser ($username: String!, $email: String!, $password: String!) {
+    addUser (username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+        email
+      }
+    }
+  }
+`;
+
+export const SAVE_BOOK = gql`
+  mutation saveBook ($bookData: savedBook!) {
+    saveBook (bookData: $bookData) {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
+    }
+`;
+
+//do the rest of them
+
+export const
