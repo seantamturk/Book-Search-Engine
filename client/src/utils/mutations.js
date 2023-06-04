@@ -43,6 +43,14 @@ export const SAVE_BOOK = gql`
     }
 `;
 
+//check this one
+export const REMOVE_BOOK = gql`
+  mutation removeBook ($bookId: String!) {
+    removeBook (bookId: $bookId) {
+
+    }
+  }
+
 //do the rest of them
 
 export const
