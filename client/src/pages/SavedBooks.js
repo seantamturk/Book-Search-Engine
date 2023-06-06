@@ -7,6 +7,10 @@ import {
   Col
 } from 'react-bootstrap';
 
+//needs to pull mutations from mutations.js
+//any time utils/API.js is used, it needs to be replaced with mutations.js
+//get is query
+//post etc is mutation
 import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';

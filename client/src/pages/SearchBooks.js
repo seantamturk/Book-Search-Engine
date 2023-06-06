@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+
 import {
   Container,
   Col,
@@ -8,10 +10,15 @@ import {
   Row
 } from 'react-bootstrap';
 
+//needs to pull mutations from mutations.js
+//any time utils/API.js is used, it needs to be replaced with mutations.js
+//get is query
+//post etc is mutation
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
+//use use mutation
 const SearchBooks = () => {
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);

@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 
 // set token secret and expiration date
+//heroku set environment variable  for secrets
+//show environment variables section for configuration, hidden by default
 const secret = "mysecretsshhhhh";
 const expiration = "2h";
 
@@ -25,8 +27,8 @@ module.exports = {
       req.user = data;
     } catch {
       console.log("Invalid token");
-      
     }
+    return req;
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
