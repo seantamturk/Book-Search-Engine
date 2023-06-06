@@ -17,7 +17,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-const routes = require("./routes");
+// const routes = require("./routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
