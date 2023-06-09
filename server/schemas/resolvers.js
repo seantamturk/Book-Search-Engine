@@ -59,7 +59,9 @@ const resolvers = {
       // Return an `Auth` object that consists of the signed token and user's information
       return { token, user };
     },
-    saveBook: async (parent, { bookData }) => {
+
+    //i added context here. Without the context parameter, the context.user check will not work properly.
+    saveBook: async (parent, { bookData }, context) => {
       if (context.user) {
         const userSavedBooks = User.findOneAndUpdate(
           { _id: context.user._id },
@@ -76,9 +78,11 @@ const resolvers = {
 
       throw new AuthenticationError("User must be logged in to save books");
     },
-    removeBook: async (parent, { bookId }) => {
+    //i added context here. Without the context parameter, the context.user._id check will not work properly.
+    //added await to findoneandupdate 
+    removeBook: async (parent, { bookId }, context) => {
       if (context.user._id) {
-        const deleteBookRec = User.findOneAndUpdate(
+        const deleteBookRec = await User.findOneAndUpdate(
           { _id: context.user.bookId },
           {
             $pull: { savedBooks: { bookId } },
