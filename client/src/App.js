@@ -10,6 +10,7 @@ import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
   // uri: "/graphql",
+  // *used for development
   // uri: "http://localhost:3001/graphql",
   uri: "https://whispering-eyrie-57776.herokuapp.com/graphql",
 });
