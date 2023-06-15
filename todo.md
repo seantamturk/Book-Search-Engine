@@ -1,4 +1,0 @@
-resolvers
-check typedefs
-authentication jsonwebtoken
-mutations.js
