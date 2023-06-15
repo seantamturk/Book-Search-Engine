@@ -1,5 +1,7 @@
 # Book Search Engine
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
 
 The Book Search Engine is a web application that allows users to search for books using keywords. It utilizes the Google Books API to fetch book data and provides a user-friendly interface for searching and saving books. The application is built with a React frontend, GraphQL API, and MongoDB database. Users can create an account, search for books, save their favorite books, and remove saved books from their collection.
